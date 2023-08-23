@@ -16,15 +16,17 @@ function getAPOD() {
     var APIKey = "KWP7hL5CquZLoMNheN4c7PgY4gcRxdp3w9cddb2S";
     var spaceQuery = "https://api.nasa.gov/planetary/apod?api_key=" + APIKey + "&date=" +dateValue;
 
-    var description = document.querySelector("#description");
-    const imageElement = document.getElementById('image');
+    var titleEl = document.querySelector("#apod-title");
+    var descriptionEl = document.querySelector("#description");
+    const imageEl = document.getElementById("image");
 
     fetch(spaceQuery)
     .then((response) => response.json())
     .then((data) => {
 
-        description.textContent = data.explanation;
-        imageElement.src = data.hdurl;
+        titleEl.textContent = data.title;
+        descriptionEl.textContent = data.explanation;
+        imageEl.src = data.hdurl;
 
     })
 } 
