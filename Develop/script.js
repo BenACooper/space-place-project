@@ -27,3 +27,12 @@ function getAPOD() {
 
 
 
+//NASA IMAGES LIBRARY API
+//API KEY RUp9mWS16zvh33le8ZSYs6OVOzQ0F1KrdbgeEa4z
+//Documentation: https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf
+
+//Breakdown tasks add everything.
+//Convert everything to issues.
+//Anything moved out of TODO should be assigned.
+//Create new issues for helping others.
+//Add everything project related, not just code relatd.
