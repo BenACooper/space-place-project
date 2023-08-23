@@ -25,5 +25,6 @@ function getAPOD() {
     })
 } 
 
-
-
+//https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf
+//API key RUp9mWS16zvh33le8ZSYs6OVOzQ0F1KrdbgeEa4z
+//https://images-api.nasa.gov/search?q={q}
