@@ -4,6 +4,14 @@
 const btnInput = document.getElementById("submit-button");
 btnInput.addEventListener("click", getAPOD);
 
+const modeToggle = document.getElementById("mode-toggle");
+modeToggle.addEventListener("click", toggleMode);
+
+function toggleMode() {
+    document.body.classList.toggle("light-mode");
+    document.body.classList.toggle("dark-mode");
+}
+
 function getAPOD() {
     // TODO: Need to generate API key from nasa website
     // TODO: Create a modal with calendar to select year/date: needs to be string
