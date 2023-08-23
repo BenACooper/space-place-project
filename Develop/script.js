@@ -10,11 +10,11 @@ function getAPOD() {
     //* Format of date needs to be "A string in YYYY-MM-DD -docs"
     
     var APIKey = "KWP7hL5CquZLoMNheN4c7PgY4gcRxdp3w9cddb2S";
-    var dateEl = document.getElementById('date-input').value;
+    var dateEl = document.getElementById('date').value;
     var spaceQuery = "https://api.nasa.gov/planetary/apod?api_key=" + APIKey + "&date=" + dateEl;
 
-    var description = document.querySelector(".classForDescriptionElement");
-    var apodImage = document.querySelector(".classForImageElement");
+    var description = document.querySelector("#descruption");
+    var apodImage = document.querySelector("#image");
     
     fetch(spaceQuery)
     .then((response) => response.json())
