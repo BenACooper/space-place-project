@@ -1,8 +1,9 @@
 //* Review docs : https://github.com/nasa/apod-api#docs for help
 
 // * This will listen for a submit button click to search APOD using given date
-const btnInput = document.getElementById("submit-button");
+const btnInput = document.getElementById("submit-btn");
 btnInput.addEventListener("click", getAPOD);
+
 
 function getAPOD() {
     // TODO: Need to generate API key from nasa website
@@ -13,14 +14,13 @@ function getAPOD() {
     var dateEl = document.getElementById('date-input').value;
     var spaceQuery = "https://api.nasa.gov/planetary/apod?api_key=" + APIKey + "&date=" + dateEl;
 
-    var description = document.querySelector(".classForDescriptionElement");
-    var apodImage = document.querySelector(".classForImageElement");
+    var apodDescr = document.querySelector("#description");
+    var apodImage = document.querySelector("#picture");
     
     fetch(spaceQuery)
     .then((response) => response.json())
     .then((data) => {
-
-        description.textContent = data.explination;
+        apodDescr.textContent = data.explination;
         apodImage.textContent = data.url;
     })
 } 
