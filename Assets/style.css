@@ -6,6 +6,12 @@
 
 *{}
 
-body{
-
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://wallpapercave.com/wp/PyO6z3T.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif; /* Specify a fallback font */
 }
