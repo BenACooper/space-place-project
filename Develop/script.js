@@ -9,7 +9,7 @@ function getAPOD() {
     // TODO: Create a modal with calendar to select year/date: needs to be string
     //* Format of date needs to be "A string in YYYY-MM-DD -docs"
     
-    var APIKey = "";
+    var APIKey = "KWP7hL5CquZLoMNheN4c7PgY4gcRxdp3w9cddb2S";
     var dateEl = document.getElementById('date-input').value;
     var spaceQuery = "https://api.nasa.gov/planetary/apod?api_key=" + APIKey + "&date=" + dateEl;
 
