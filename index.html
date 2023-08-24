@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Assets/style.css">
-    <script rel="tailwind" src="https://cdn.tailwindcss.com"></script>
-
+    <!-- <script rel="tailwind" src="https://cdn.tailwindcss.com"></script> -->
     <title>Space Place</title>
 </head>
+
 <body>
-    <header></header>
+    <header>The Space Place</header>
 
-    <div class="apod">
-        <h3>Apod Pic of day</h3>
-        <img id="image" src="">
-        <p id="description"></p>
+    <div>
 
-        <form id="calendar">
-            <input type="button" id="submit-button">
-            <input type="date" id="date">
-        </form>
+        <div class="apod">
+            <h3>Apod Pic of day</h3>
+            <img id="image" src="">
+            <p id="description"></p>
+
+            <form id="calendar">
+                <input type="date" id="date">
+                <button type="button" id="submit-button">Submit</button>
+            </form>
+
+        </div>
     </div>
 
-        <!-- we would put more stuff here -->
+ <section class="gameContainer">
+    <button class = "gameButton">Click Me!</button>
+ </section>
 
-        <script src="Develop/script.js"></script>
-    </div>
+    <script src="Develop/script.js"></script>
 </body>
+
 </html>
