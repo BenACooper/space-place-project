@@ -4,12 +4,22 @@
 const btnInput = document.getElementById("submit-button");
 btnInput.addEventListener("click", getAPOD);
 
+const modeToggle = document.getElementById("mode-toggle");
+modeToggle.addEventListener("click", toggleMode);
+
+function toggleMode() {
+    document.body.classList.toggle("light-mode");
+    document.body.classList.toggle("dark-mode");
+}
+
 function getAPOD() {
-  // TODO: Need to generate API key from nasa website
-  // TODO: Create a modal with calendar to select year/date: needs to be string
-  //* Format of date needs to be "A string in YYYY-MM-DD -docs"
-  var dateInput = document.getElementById("date");
-  var dateValue = dateInput.value;
+    // TODO: Need to generate API key from nasa website
+    // TODO: Create a modal with calendar to select year/date: needs to be string
+    //* Format of date needs to be "A string in YYYY-MM-DD -docs"
+    var dateInput = document.getElementById('date');
+    var dateValue = dateInput.value;
+
+
 
   var APIKey = "KWP7hL5CquZLoMNheN4c7PgY4gcRxdp3w9cddb2S";
   var spaceQuery =
@@ -18,16 +28,17 @@ function getAPOD() {
     "&date=" +
     dateValue;
 
-  var description = document.querySelector("#description");
-  var apodImage = document.querySelector("#image");
-
-  console.log(dateValue);
+    var titleEl = document.querySelector("#apod-title");
+    var descriptionEl = document.querySelector("#description");
+    const imageEl = document.getElementById("image");
 
   fetch(spaceQuery)
     .then((response) => response.json())
     .then((data) => {
-      description.textContent = data.explination;
-      apodImage.textContent = data.url;
+        titleEl.textContent = data.title;
+      descriptionEl.textContent = data.explanation;
+      imageEl.src = data.hdurl;
+
     });
 }
 
