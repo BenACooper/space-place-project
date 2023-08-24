@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Assets/style.css">
-    <!-- <script rel="tailwind" src="https://cdn.tailwindcss.com"></script> -->
+    <script rel="tailwind" src="https://cdn.tailwindcss.com"></script>
     <title>Space Place</title>
 </head>
 
@@ -15,20 +14,23 @@
         <button id="mode-toggle">Toggle Light/Dark Mode</button>
     </header>
 
-    <div>
+<button id="openModalBtn">Open Modal</button>
 
-        <div class="apod">
-            <h3>Apod Pic of day</h3>
-            <p id="apod-title"></p>
-            <img id="image" src="" width="50%" height="50%">
-            <p id="description"></p>
+<div id="modal">
+    <div class="apod-input">
+    <span class="close">&times;</span>
+        <form id="calendar">
+            <input type="date" id="date">
+            <button type="button" id="submit-button">Submit</button>
+        </form>
+    </div>
+</div>
 
-            <form id="calendar">
-                <input type="date" id="date">
-                <button type="button" id="submit-button">Submit</button>
-            </form>
-
-        </div>
+    <div id="apod-output">
+        <h3>Apod Pic of day</h3>
+        <p id="apod-title"></p>
+        <img id="image" src="" width="50%" height="50%">
+        <p id="description"></p>
     </div>
 
  <section class="gameContainer">
@@ -38,5 +40,4 @@
 
     <script src="Develop/script.js"></script>
 </body>
-
 </html>
