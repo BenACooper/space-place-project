@@ -1,24 +1,24 @@
 // * This loads the modal function on window load
-window.onload = function () {
-  // * These variables used to manipulate modal and modal content
-  var modal = document.getElementById("modal");
-  var btn = document.getElementById("openModalBtn");
-  var span = document.getElementsByClassName("close")[0];
+window.onload = function() {
+    // * These variables used to manipulate modal and modal content
+    var modal = document.getElementById('modal');
+    var btn = document.getElementById("openModalBtn");
+    var span = document.getElementsByClassName("close")[0];
 
-  // * On modal button click, display style block
-  btn.onclick = function () {
-    modal.style.display = "block";
-  };
-  // * On span click, hide the modal
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+    // * On modal button click, display style block
+    btn.onclick = function() {
+        modal.style.display = "block";
     }
-  };
-};
+    // * On span click, hide the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
 
 //* Review docs : https://github.com/nasa/apod-api#docs for help
 
@@ -32,19 +32,19 @@ const modeToggle = document.getElementById("mode-toggle");
 modeToggle.addEventListener("click", toggleMode);
 
 function toggleMode() {
-  document.body.classList.toggle("light-mode");
-  document.body.classList.toggle("dark-mode");
+    document.body.classList.toggle("light-mode");
+    document.body.classList.toggle("dark-mode");
 }
 
 function getAPOD() {
-  //* This hides the modal after submit button click event
-  document.getElementById("modal").style.display = "none";
+    //* This hides the modal after submit button click event
+    document.getElementById('modal').style.display = "none";
 
-  // TODO: Need to generate API key from nasa website
-  // TODO: Create a modal with calendar to select year/date: needs to be string
-  //* Format of date needs to be "A string in YYYY-MM-DD -docs"
-  var dateInput = document.getElementById("date");
-  var dateValue = dateInput.value;
+    // TODO: Need to generate API key from nasa website
+    // TODO: Create a modal with calendar to select year/date: needs to be string
+    //* Format of date needs to be "A string in YYYY-MM-DD -docs"
+    var dateInput = document.getElementById('date');
+    var dateValue = dateInput.value;
 
   var APIKey = "KWP7hL5CquZLoMNheN4c7PgY4gcRxdp3w9cddb2S";
   var spaceQuery =
@@ -60,6 +60,7 @@ function getAPOD() {
   fetch(spaceQuery)
     .then((response) => response.json())
     .then((data) => {
+
       titleEl.textContent = data.title;
       descriptionEl.textContent = data.explanation;
       imageEl.src = data.hdurl;
@@ -186,6 +187,7 @@ function getLibraryData() {
 
 //Receives the image URL and displays it.
 var gameImageContainerEl = document.querySelector(".gameImageContainer");
+
 
 function displayLibraryData(imageLink) {
   var existingImageEl = document.getElementById("gameImage");
