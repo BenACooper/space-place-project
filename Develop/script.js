@@ -1,6 +1,30 @@
+// * This loads the modal function on window load
+window.onload = function() {
+    // * These variables used to manipulate modal and modal content
+    var modal = document.getElementById('modal');
+    var btn = document.getElementById("openModalBtn");
+    var span = document.getElementsByClassName("close")[0];
+
+    // * On modal button click, display style block
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    // * On span click, hide the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
 //* Review docs : https://github.com/nasa/apod-api#docs for help
 
 // * This will listen for a submit button click to search APOD using given date
+//! Nasa images library section
+
 const btnInput = document.getElementById("submit-button");
 btnInput.addEventListener("click", getAPOD);
 
@@ -13,6 +37,9 @@ function toggleMode() {
 }
 
 function getAPOD() {
+    //* This hides the modal after submit button click event
+    document.getElementById('modal').style.display = "none";
+
     // TODO: Need to generate API key from nasa website
     // TODO: Create a modal with calendar to select year/date: needs to be string
     //* Format of date needs to be "A string in YYYY-MM-DD -docs"
@@ -42,6 +69,8 @@ function getAPOD() {
     });
 }
 
+
+//! Nasa images library section
 //NASA IMAGES LIBRARY API
 //API KEY RUp9mWS16zvh33le8ZSYs6OVOzQ0F1KrdbgeEa4z
 //Documentation: https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf
