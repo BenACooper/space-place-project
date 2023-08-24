@@ -79,7 +79,6 @@ function selectKeyword() {
   var randomSubArray = combinedArray[randomSubArrayIndex];
   console.log(randomSubArray);
 
-
   //Select a random prroperty from the nested array.
   var randomPropertyIndex = Math.floor(Math.random() * randomSubArray.length);
   var randomProperty = randomSubArray[randomPropertyIndex];
@@ -89,7 +88,6 @@ function selectKeyword() {
   searchLibraryAPI(randomProperty);
   // selectQuestion(randomSubArray);
 }
-
 
 //Declare function that receives randomlly selected keyword to query the image library API and save the response it to localstorage.
 function searchLibraryAPI(selectedKeyword) {
@@ -126,15 +124,17 @@ function getLibraryData() {
 }
 
 //Receives the image URL and displays it.
+var gameImageContainerEl = document.querySelector(".gameImageContainer")
+
 function displayLibraryData(imageLink) {
-  var existingImageEl = document.getElementById("libraryImage");
+  var existingImageEl = document.getElementById("gameImage");
 
   if (existingImageEl) {
     existingImageEl.parentNode.removeChild(existingImageEl);
   }
 
-  var libraryImageEl = document.createElement("img");
-  libraryImageEl.setAttribute("id", "libraryImage");
-  libraryImageEl.src = imageLink;
-  gameContainerEl.appendChild(libraryImageEl);
+  var gameImageEl = document.createElement("img");
+  gameImageEl.setAttribute("id", "gameImage");
+  gameImageEl.src = imageLink;
+  gameImageContainerEl.appendChild(gameImageEl);
 }
