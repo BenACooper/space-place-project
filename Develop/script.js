@@ -63,6 +63,9 @@ function getAPOD() {
       titleEl.textContent = data.title;
       descriptionEl.textContent = data.explanation;
       imageEl.src = data.hdurl;
+
+      saveToLocalStorage(dateValue, data.title);
+      displayHistory(); // Display history after saving the new entry
     });
 }
 
