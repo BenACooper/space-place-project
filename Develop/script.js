@@ -21,9 +21,8 @@ window.onload = function () {
 };
 
 //* Review docs : https://github.com/nasa/apod-api#docs for help
-
 // * This will listen for a submit button click to search APOD using given date
-//! Nasa images library section
+//! NASA APOD section
 
 const btnInput = document.getElementById("submit-button");
 btnInput.addEventListener("click", getAPOD);
@@ -127,7 +126,7 @@ function fetchImageForHistoryEntry(date) {
     });
 }
 
-//! Nasa images library section
+//! NASA Image Library section
 //NASA IMAGES LIBRARY API
 //API KEY RUp9mWS16zvh33le8ZSYs6OVOzQ0F1KrdbgeEa4z
 //Documentation: https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf
@@ -203,36 +202,103 @@ function getLibraryData() {
     var parsedLibraryData = JSON.parse(rawLibraryData);
     console.log(parsedLibraryData);
 
-    var imageLink = parsedLibraryData.collection.items[0].links[0].href;
+  var imageLink = parsedLibraryData.collection.items[0].links[0].href;
+  console.log(imageLink)
+  displayLibraryData(imageLink);
+}
 
-    displayLibraryData(imageLink);
-  }
 }
 
 //Receives the image URL and displays it.
 var gameImageContainerEl = document.querySelector(".gameImageContainer");
 
 function displayLibraryData(imageLink) {
-  var existingImageEl = document.getElementById("gameImage");
 
-  if (existingImageEl) {
-    existingImageEl.parentNode.removeChild(existingImageEl);
-  }
-
-  var gameImageEl = document.createElement("img");
-  gameImageEl.setAttribute("id", "gameImage");
-  gameImageEl.src = imageLink;
-  gameImageContainerEl.appendChild(gameImageEl);
+  gameImageContainerEl.style.backgroundImage = "url('" + imageLink + "')";
 }
 
-//* This is for toggle between light/dark mode and moon/sun icon
-document.getElementById("mode-toggle").addEventListener("click", function () {
-  var icon = document.getElementById("mode-toggle");
-  if (icon.classList.contains("fa-moon")) {
-    icon.classList.remove("fa-moon");
-    icon.classList.add("fa-sun");
+//! Light & Darkmode Toggle
+document.getElementById('mode-toggle').addEventListener('click', function() {
+  var icon = document.getElementById('mode-toggle');
+  if (icon.classList.contains('fa-moon')) {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
   } else {
-    icon.classList.remove("fa-sun");
-    icon.classList.add("fa-moon");
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
   }
 });
+
+//! Hangman Game
+var wordContainer = document.querySelector(".wordContainer");
+var lettersInChosenWord = [];
+var blanksLetters = [];
+var numBlanks = 0;
+
+//Declare function to select a question to display for hangman game. This function is called by the selectKeyword function.
+function selectQuestion(randomSubArray) {
+  var question = "";
+
+  if ((randomSubArray = celestialArr)) {
+    question =
+      "This nebulae is named after an animal it resembes. Which animal do you think it looks like?";
+    console.log(question);
+  }
+
+  if ((randomSubArray = galaxyArr)) {
+    question =
+      "This galaxy is from our local group. Which galaxy do you think this is?";
+    console.log(question);
+  }
+
+  if ((randomSubArray = planetMapsArr)) {
+    question =
+      "This is a world map of another planet in our solar system. Which planet is it?";
+    console.log(question);
+  }
+
+  if ((randomSubArray = surfacePhotosArr)) {
+    question =
+      "This is a 'close up' photo of another planet's surface. Which planet is it?";
+    console.log(question);
+  }
+}
+
+//Declare function to create 'blank spaces' for the user to fill in with the keyword.
+function generateBlanks(selectedKeyword) {
+  lettersInKeyword = selectedKeyword.split("");
+  numBlanks = lettersInKeyword.length;
+  blanksLetters = [];
+
+  for (var i = 0; i < numBlanks; i++) {
+    blanksLetters.push(" ");
+  }
+}
+
+document.addEventListener("keydown", function (event) {
+  var key = event.key.toLowerCase();
+  var alphabetNumericCharacters = "abcdefghijklmnopqrstuvwxyz0123456789 ".split(
+    ""
+  );
+  if (alphabetNumericCharacters.includes(key)) {
+    var letterGuessed = event.key;
+    checkLetters(letterGuessed);
+  }
+});
+
+function checkLetters(letter) {
+  var letterInWord = false;
+  for (var i = 0; i < numBlanks; i++) {
+    if (selectedKeyword[i] === letter) {
+      letterInWord = true;
+    }
+  }
+  if (letterInWord) {
+    for (var j = 0; j < numBlanks; j++) {
+      if (selectedKeyword[j] === letter) {
+        blanksLetters[j] = letter;
+      }
+    }
+    wordBlank.textContent = blanksLetters.join(" ");
+  }
+}
