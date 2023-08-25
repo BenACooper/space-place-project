@@ -55,7 +55,7 @@ var spaceQuery =
 
 var titleEl = document.querySelector("#apod-title");
 var descriptionEl = document.querySelector("#description");
-const imageEl = document.getElementById("image");
+const imageEl = document.getElementById("apodImage");
 
 fetch(spaceQuery)
   .then((response) => response.json())
