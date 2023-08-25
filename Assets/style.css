@@ -9,18 +9,19 @@
     margin: 0px;
     padding: 0px;
     border: 0px;
+    color:#6495ED;
 }
 
 /* Light mode styles */
 .light-mode {
     background-color: #ffffff;
-    color: #A3BBAD;
+    color: orange;
 }
 
 /* Dark mode styles */
 .dark-mode {
     background-color: rgb(25, 25, 31);
-    color: #ffffff;
+    color: orange;
 }
 
 body {
