@@ -1,24 +1,24 @@
 // * This loads the modal function on window load
-window.onload = function() {
-    // * These variables used to manipulate modal and modal content
-    var modal = document.getElementById('modal');
-    var btn = document.getElementById("openModalBtn");
-    var span = document.getElementsByClassName("close")[0];
+window.onload = function () {
+  // * These variables used to manipulate modal and modal content
+  var modal = document.getElementById("modal");
+  var btn = document.getElementById("openModalBtn");
+  var span = document.getElementsByClassName("close")[0];
 
-    // * On modal button click, display style block
-    btn.onclick = function() {
-        modal.style.display = "block";
+  // * On modal button click, display style block
+  btn.onclick = function () {
+    modal.style.display = "block";
+  };
+  // * On span click, hide the modal
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
     }
-    // * On span click, hide the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-}
+  };
+};
 
 //* Review docs : https://github.com/nasa/apod-api#docs for help
 // * This will listen for a submit button click to search APOD using given date
@@ -31,19 +31,19 @@ const modeToggle = document.getElementById("mode-toggle");
 modeToggle.addEventListener("click", toggleMode);
 
 function toggleMode() {
-    document.body.classList.toggle("light-mode");
-    document.body.classList.toggle("dark-mode");
+  document.body.classList.toggle("light-mode");
+  document.body.classList.toggle("dark-mode");
 }
 
 function getAPOD() {
-    //* This hides the modal after submit button click event
-    document.getElementById('modal').style.display = "none";
+  //* This hides the modal after submit button click event
+  document.getElementById("modal").style.display = "none";
 
-    // TODO: Need to generate API key from nasa website
-    // TODO: Create a modal with calendar to select year/date: needs to be string
-    //* Format of date needs to be "A string in YYYY-MM-DD -docs"
-    var dateInput = document.getElementById('date');
-    var dateValue = dateInput.value;
+  // TODO: Need to generate API key from nasa website
+  // TODO: Create a modal with calendar to select year/date: needs to be string
+  //* Format of date needs to be "A string in YYYY-MM-DD -docs"
+  var dateInput = document.getElementById("date");
+  var dateValue = dateInput.value;
 
   var APIKey = "KWP7hL5CquZLoMNheN4c7PgY4gcRxdp3w9cddb2S";
   var spaceQuery =
@@ -59,7 +59,6 @@ function getAPOD() {
   fetch(spaceQuery)
     .then((response) => response.json())
     .then((data) => {
-
       titleEl.textContent = data.title;
       descriptionEl.textContent = data.explanation;
       imageEl.src = data.hdurl;
@@ -145,12 +144,12 @@ function selectKeyword() {
 
   //Select a random prroperty from the nested array.
   var randomPropertyIndex = Math.floor(Math.random() * randomSubArray.length);
-  var selectedKeyword = randomSubArray[randomPropertyIndex];
-  console.log(selectedKeyword);
+  var randomProperty = randomSubArray[randomPropertyIndex];
+  console.log(randomProperty);
 
   //Pass proprty to searchLibraryAPI function for use as keyword.
-  searchLibraryAPI(selectedKeyword);
-  generateBlanks(selectedKeyword)
+  searchLibraryAPI(randomProperty);
+  // selectQuestion(randomSubArray);
 }
 
 //Declare function that receives randomlly selected keyword to query the image library API and save the response it to localstorage.
@@ -203,7 +202,25 @@ function displayLibraryData(imageLink) {
   gameImageContainerEl.appendChild(gameImageEl);
 }
 
+//! Light & Darkmode Toggle
+//* This is for toggle between light/dark mode and moon/sun icon
+document.getElementById("mode-toggle").addEventListener("click", function () {
+  var icon = document.getElementById("mode-toggle");
+  if (icon.classList.contains("fa-moon")) {
+    icon.classList.remove("fa-moon");
+    icon.classList.add("fa-sun");
+  } else {
+    icon.classList.remove("fa-sun");
+    icon.classList.add("fa-moon");
+  }
+});
+
 //! Hangman Game
+var wordContainer = docuiment.querySelector(".wordContainer");
+var lettersInChosenWord = [];
+var blanksLetters = [];
+var numBlanks = 0;
+
 //Declare function to select a question to display for hangman game. This function is called by the selectKeyword function.
 function selectQuestion(randomSubArray) {
   var question = "";
@@ -236,21 +253,38 @@ function selectQuestion(randomSubArray) {
 //Declare function to create 'blank spaces' for the user to fill in with the keyword.
 function generateBlanks(selectedKeyword) {
   lettersInKeyword = selectedKeyword.split("");
-  numBlanks = lettersInKeyword.length
-  blanksLetters = []
+  numBlanks = lettersInKeyword.length;
+  blanksLetters = [];
 
-  for (var i = 0; i <numBlanks; i++)
-  blanksLetters.push(" ");
+  for (var i = 0; i < numBlanks; i++) {
+    blanksLetters.push(" ");
+  }
 }
-//! Light & Darkmode Toggle
-//* This is for toggle between light/dark mode and moon/sun icon 
-document.getElementById('mode-toggle').addEventListener('click', function() {
-  var icon = document.getElementById('mode-toggle');
-  if (icon.classList.contains('fa-moon')) {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-  } else {
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
+
+document.addEventListener("keydown", function (event) {
+  var key = event.key.toLowerCase();
+  var alphabetNumericCharacters = "abcdefghijklmnopqrstuvwxyz0123456789 ".split(
+    ""
+  );
+  if (alphabetNumericCharacters.includes(key)) {
+    var letterGuessed = event.key;
+    checkLetters(letterGuessed);
   }
 });
+
+function checkLetters(letter) {
+  var letterInWord = false;
+  for (var i = 0; i < numBlanks; i++) {
+    if (selectedKeyword[i] === letter) {
+      letterInWord = true;
+    }
+  }
+  if (letterInWord) {
+    for (var j = 0; j < numBlanks; j++) {
+      if (selectedKeyword[j] === letter) {
+        blanksLetters[j] = letter;
+      }
+    }
+    wordBlank.textContent = blanksLetters.join(" ");
+  }
+}
