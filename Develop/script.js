@@ -182,7 +182,7 @@ if (rawLibraryData) {
   console.log(parsedLibraryData);
 
   var imageLink = parsedLibraryData.collection.items[0].links[0].href;
-
+  console.log(imageLink)
   displayLibraryData(imageLink);
 }
 }
@@ -191,16 +191,7 @@ if (rawLibraryData) {
 var gameImageContainerEl = document.querySelector(".gameImageContainer");
 
 function displayLibraryData(imageLink) {
-var existingImageEl = document.getElementById("gameImage");
-
-if (existingImageEl) {
-  existingImageEl.parentNode.removeChild(existingImageEl);
-}
-
-var gameImageEl = document.createElement("img");
-gameImageEl.setAttribute("id", "gameImage");
-gameImageEl.src = imageLink;
-gameImageContainerEl.appendChild(gameImageEl);
+gameImageContainerEl.style.backgroundImage = "url('" + imageLink + "')";
 }
 
 //! Light & Darkmode Toggle
@@ -216,7 +207,7 @@ document.getElementById('mode-toggle').addEventListener('click', function() {
 });
 
 //! Hangman Game
-var wordContainer = docuiment.querySelector(".wordContainer");
+var wordContainer = document.querySelector(".wordContainer");
 var lettersInChosenWord = [];
 var blanksLetters = [];
 var numBlanks = 0;

@@ -143,17 +143,10 @@ justify-content:center;
 
 .gameImageContainer {
     border: solid 1px red;
-    max-height: 550px;
-    max-width: 550px;
-    overflow: hidden;
-}
-
-.gameImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-
+    height: 550px;
+    width: 550px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .stylingDiv{
