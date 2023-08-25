@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Libre+Baskerville&family=PT+Serif&family=Roboto+Slab:wght@100;400&family=Space+Mono&display=swap');
+
 :root {
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Libre Baskerville', serif;
+    font-family: 'PT Serif', serif;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Space Mono', monospace;
     margin: 0px;
     padding: 0px;
     border: 0px;
@@ -7,12 +14,12 @@
 /* Light mode styles */
 .light-mode {
     background-color: #ffffff;
-    color: #333333;
+    color: #A3BBAD;
 }
 
 /* Dark mode styles */
 .dark-mode {
-    background-color: #333333;
+    background-color: rgb(25, 25, 31);
     color: #ffffff;
 }
 
@@ -26,6 +33,40 @@ body {
     font-family: Arial, sans-serif;
 }
 
+header{
+    background-color: rgb(25, 25, 31);
+    display:inline-block;
+    margin:20px;
+    padding:0px;
+    border: 2px solid black;
+    width:95%;
+}
+
+header h1{
+    text-align: center;
+    font-size:50px;
+}
+
+#themeTog{
+    background-color:rgb(25, 25, 31);
+    display:inline-block;
+    margin:10px;
+    padding:20px;
+    border: 2px solid black;
+    float: right;
+
+
+}
+
+#modalTog{
+    background-color:rgb(25, 25, 31);
+    display:inline-block;
+    margin:auto;
+    margin-left:18px;
+    padding:15px;
+    border: 2px solid black;
+    float: left;
+}
 /* we will add more once we make the css */
 /* ! Modal styling */
 #modal {
@@ -112,5 +153,32 @@ justify-content:center;
     height: 100%;
     object-fit: cover;
     object-position: center;
+
+}
+
+.stylingDiv{
+height:1000px;
+width:1000px;
+display:block;
+text-align:center;
+justify-content:center;
+}
+
+
+
+.mainApod{
+    top:0px;
+    left:0px;
+    height:50%;
+    width:60%;
+    margin:auto;
+    padding:5px;
+    float:left;
+}
+
+#apod-output{
+    margin:auto;
+    text-align:center;
+    justify-content:center;
 
 }
