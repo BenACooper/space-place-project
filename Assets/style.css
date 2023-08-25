@@ -32,15 +32,19 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: Arial, sans-serif;
+    
 }
 
 header{
     background-color: rgb(25, 25, 31);
-    display:inline-block;
-    margin:20px;
-    padding:0px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    padding:10px;
     border: 2px solid black;
-    width:95%;
+    width:50%;
+    text-align: center;
+    
 }
 
 header h1{
@@ -163,6 +167,9 @@ width:1000px;
 display:block;
 text-align:center;
 justify-content:center;
+background-color: rgb(25, 25, 31);
+margin-left:auto;
+margin-right:auto;
 }
 
 
@@ -175,11 +182,14 @@ justify-content:center;
     margin:auto;
     padding:5px;
     float:left;
+    background-color: rgb(25, 25, 31);
+
 }
 
 #apod-output{
     margin:auto;
     text-align:center;
     justify-content:center;
+    background-color: rgb(25, 25, 31);
 
 }
