@@ -21,7 +21,6 @@ window.onload = function() {
 }
 
 //* Review docs : https://github.com/nasa/apod-api#docs for help
-
 // * This will listen for a submit button click to search APOD using given date
 //! NASA APOD section
 
@@ -146,12 +145,12 @@ function selectKeyword() {
 
   //Select a random prroperty from the nested array.
   var randomPropertyIndex = Math.floor(Math.random() * randomSubArray.length);
-  var randomProperty = randomSubArray[randomPropertyIndex];
-  console.log(randomProperty);
+  var selectedKeyword = randomSubArray[randomPropertyIndex];
+  console.log(selectedKeyword);
 
   //Pass proprty to searchLibraryAPI function for use as keyword.
-  searchLibraryAPI(randomProperty);
-  // selectQuestion(randomSubArray);
+  searchLibraryAPI(selectedKeyword);
+  generateBlanks(selectedKeyword)
 }
 
 //Declare function that receives randomlly selected keyword to query the image library API and save the response it to localstorage.
@@ -191,7 +190,6 @@ function getLibraryData() {
 //Receives the image URL and displays it.
 var gameImageContainerEl = document.querySelector(".gameImageContainer");
 
-
 function displayLibraryData(imageLink) {
   var existingImageEl = document.getElementById("gameImage");
 
@@ -205,6 +203,46 @@ function displayLibraryData(imageLink) {
   gameImageContainerEl.appendChild(gameImageEl);
 }
 
+//! Hangman Game
+//Declare function to select a question to display for hangman game. This function is called by the selectKeyword function.
+function selectQuestion(randomSubArray) {
+  var question = "";
+
+  if ((randomSubArray = celestialArr)) {
+    question =
+      "This nebulae is named after an animal it resembes. Which animal do you think it looks like?";
+    console.log(question);
+  }
+
+  if ((randomSubArray = galaxyArr)) {
+    question =
+      "This galaxy is from our local group. Which galaxy do you think this is?";
+    console.log(question);
+  }
+
+  if ((randomSubArray = planetMapsArr)) {
+    question =
+      "This is a world map of another planet in our solar system. Which planet is it?";
+    console.log(question);
+  }
+
+  if ((randomSubArray = surfacePhotosArr)) {
+    question =
+      "This is a 'close up' photo of another planet's surface. Which planet is it?";
+    console.log(question);
+  }
+}
+
+//Declare function to create 'blank spaces' for the user to fill in with the keyword.
+function generateBlanks(selectedKeyword) {
+  lettersInKeyword = selectedKeyword.split("");
+  numBlanks = lettersInKeyword.length
+  blanksLetters = []
+
+  for (var i = 0; i <numBlanks; i++)
+  blanksLetters.push(" ");
+}
+//! Light & Darkmode Toggle
 //* This is for toggle between light/dark mode and moon/sun icon 
 document.getElementById('mode-toggle').addEventListener('click', function() {
   var icon = document.getElementById('mode-toggle');
