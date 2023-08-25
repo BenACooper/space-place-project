@@ -46,8 +46,6 @@ function getAPOD() {
     var dateInput = document.getElementById('date');
     var dateValue = dateInput.value;
 
-
-
   var APIKey = "KWP7hL5CquZLoMNheN4c7PgY4gcRxdp3w9cddb2S";
   var spaceQuery =
     "https://api.nasa.gov/planetary/apod?api_key=" +
@@ -55,20 +53,58 @@ function getAPOD() {
     "&date=" +
     dateValue;
 
-    var titleEl = document.querySelector("#apod-title");
-    var descriptionEl = document.querySelector("#description");
-    const imageEl = document.getElementById("image");
+  var titleEl = document.querySelector("#apod-title");
+  var descriptionEl = document.querySelector("#description");
+  const imageEl = document.getElementById("image");
 
   fetch(spaceQuery)
     .then((response) => response.json())
     .then((data) => {
-        titleEl.textContent = data.title;
+
+      titleEl.textContent = data.title;
       descriptionEl.textContent = data.explanation;
       imageEl.src = data.hdurl;
 
+      saveToLocalStorage(dateValue, data.title);
+      displayHistory(); // Display history after saving the new entry
     });
 }
 
+function saveToLocalStorage(date, title) {
+  const history = JSON.parse(localStorage.getItem("apodHistory")) || [];
+
+  if (history.length >= 5) {
+    history.shift();
+  }
+
+  history.push({ date, title });
+  localStorage.setItem("apodHistory", JSON.stringify(history));
+}
+
+function displayHistory() {
+  const history = JSON.parse(localStorage.getItem("apodHistory")) || [];
+  const historyContainer = document.getElementById("history-container");
+  historyContainer.innerHTML = "";
+
+  const startIdx = Math.max(0, history.length - 5);
+  const recentHistory = history.slice(startIdx);
+
+  recentHistory.forEach((entry) => {
+    const historyItem = document.createElement("div");
+    historyItem.classList.add("history-item");
+
+    const dateEl = document.createElement("p");
+    dateEl.textContent = `Date: ${entry.date}`;
+
+    const titleEl = document.createElement("p");
+    titleEl.textContent = `Title: ${entry.title}`;
+
+    historyItem.appendChild(dateEl);
+    historyItem.appendChild(titleEl);
+
+    historyContainer.appendChild(historyItem);
+  });
+}
 
 //! NASA Image Library section
 //NASA IMAGES LIBRARY API
@@ -153,7 +189,8 @@ function getLibraryData() {
 }
 
 //Receives the image URL and displays it.
-var gameImageContainerEl = document.querySelector(".gameImageContainer")
+var gameImageContainerEl = document.querySelector(".gameImageContainer");
+
 
 function displayLibraryData(imageLink) {
   var existingImageEl = document.getElementById("gameImage");
@@ -167,3 +204,15 @@ function displayLibraryData(imageLink) {
   gameImageEl.src = imageLink;
   gameImageContainerEl.appendChild(gameImageEl);
 }
+
+//* This is for toggle between light/dark mode and moon/sun icon 
+document.getElementById('mode-toggle').addEventListener('click', function() {
+  var icon = document.getElementById('mode-toggle');
+  if (icon.classList.contains('fa-moon')) {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+  } else {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
+  }
+});
