@@ -204,3 +204,15 @@ function displayLibraryData(imageLink) {
   gameImageEl.src = imageLink;
   gameImageContainerEl.appendChild(gameImageEl);
 }
+
+//* This is for toggle between light/dark mode and moon/sun icon 
+document.getElementById('mode-toggle').addEventListener('click', function() {
+  var icon = document.getElementById('mode-toggle');
+  if (icon.classList.contains('fa-moon')) {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+  } else {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
+  }
+});
