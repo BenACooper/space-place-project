@@ -155,3 +155,30 @@ justify-content:center;
     object-position: center;
 
 }
+
+.stylingDiv{
+height:1000px;
+width:1000px;
+display:block;
+text-align:center;
+justify-content:center;
+}
+
+
+
+.mainApod{
+    top:0px;
+    left:0px;
+    height:50%;
+    width:60%;
+    margin:auto;
+    padding:5px;
+    float:left;
+}
+
+#apod-output{
+    margin:auto;
+    text-align:center;
+    justify-content:center;
+
+}
