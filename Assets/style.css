@@ -9,18 +9,18 @@
   margin: 0px;
   padding: 0px;
   border: 0px;
+  color: #004d66;
 }
 
 /* Light mode styles */
 .light-mode {
   background-color: #ffffff;
-  color: #a3bbad;
 }
 
 /* Dark mode styles */
 .dark-mode {
   background-color: rgb(25, 25, 31);
-  color: #ffffff;
+  color: #CC5500;
 }
 
 body {
@@ -33,15 +33,16 @@ body {
   font-family: Arial, sans-serif;
 }
 
-header {
-  background-color: rgb(25, 25, 31);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  border: 2px solid black;
-  width: 50%;
-  text-align: center;
+header{
+    background-color: rgb(25, 25, 31);
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    padding:10px;
+    border: 2px solid black;
+    width:55%;
+    text-align: center;
+    border-radius: 20px;
 }
 
 header h1 {
@@ -49,24 +50,48 @@ header h1 {
   font-size: 50px;
 }
 
-#themeTog {
-  background-color: rgb(25, 25, 31);
-  display: inline-block;
-  margin: 10px;
-  padding: 20px;
-  border: 2px solid black;
-  float: right;
+header h3{
+  font-style: italic;
 }
 
-#modalTog {
-  background-color: rgb(25, 25, 31);
-  display: inline-block;
-  margin: auto;
-  margin-left: 18px;
-  padding: 15px;
-  border: 2px solid black;
-  float: left;
+#themeTog{
+text-align:right;
+justify-content:space-around;
+margin:auto;
 }
+
+#modalTog{
+  margin:auto;
+  padding:15px;
+  border-radius:20px;
+}
+
+#openModalBtn{
+  margin:auto;
+  padding:10px;
+  border: 2px solid grey;
+  border-radius:20px;
+}
+
+#apod-output{
+  align-self: center;
+  margin:auto;
+}
+#apodImage{
+  padding:10px;
+  border:5px;
+  border-radius:20px;
+}
+
+#apod-title{
+  font-size:30px;
+  margin:auto;
+  padding:5px;
+  border:5px;
+  border-width: 50%;
+  border-bottom:3px solid rgba(0, 0, 0, 0.4);
+}
+
 /* we will add more once we make the css */
 /* ! Modal styling */
 #modal {
@@ -137,8 +162,11 @@ img {
   text-align: center;
   justify-content: center;
   background-color: rgb(25, 25, 31);
-  margin-left: auto;
-  margin-right: auto;
+  margin: 5%;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  border-radius:20px;
 }
 
 .mainApod {
@@ -160,7 +188,6 @@ img {
 }
 
 /* ! Game styling */
-
 .gameContainer {
   position: relative;
   border: solid 1px red;
@@ -223,4 +250,41 @@ img {
 .wordContainer {
   border: solid 1px red;
   font-size: xx-large;
+}
+
+.gameImageContainer {
+    height: 550px;
+    width: 550px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:auto;
+    border-radius:20px;
+}
+
+.stylingDiv{
+height:1500px;
+width:1000px;
+display:block;
+text-align:center;
+justify-content:center;
+background-color: rgb(25, 25, 31);
+margin-left:auto;
+margin-right:auto;
+margin-top: 30px;
+border-radius:25px;
+border: 2px solid black;
+}
+
+footer{
+  width:1000px;
+display:block;
+text-align:center;
+justify-content:center;
+background-color: rgb(25, 25, 31);
+margin-left:auto;
+margin-right:auto;
+padding:20px;
+margin-top: 30px;
+border-radius:25px;
+border: 2px solid black;
 }
