@@ -130,31 +130,8 @@ header h3 {
   cursor: pointer;
 }
 
-#history-container {
-  background-color: rgb(25, 25, 31);
-  padding: 20px;
-  border-radius: 20px;
-  border: 2px solid rgb(25, 25, 31);
-  margin: 30px auto;
-}
-
-.history-title {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  padding: 10px;
-  border: 2px solid grey;
-  border-radius: 20px;
-}
-
 .history-item {
   cursor: pointer;
-  border: 2px solid #004d66;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
-  background-color: grey;
 }
 
 #calendar {

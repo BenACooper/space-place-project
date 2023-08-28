@@ -89,6 +89,7 @@ function displayHistory() {
   titleEl.classList.add("history-title");
   historyContainer.appendChild(titleEl);
   
+
   const startIdx = Math.max(0, history.length - 5);
   const recentHistory = history.slice(startIdx);
 
@@ -367,5 +368,6 @@ function checkWin() {
     gameImageContainerEl.classList.add("hidden");
   }
 }
+
 
 playAgainButtonEl.addEventListener("click", selectKeyword);
