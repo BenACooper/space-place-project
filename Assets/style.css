@@ -20,7 +20,7 @@
 /* Dark mode styles */
 .dark-mode {
   background-color: rgb(25, 25, 31);
-  color: #CC5500;
+  color: #cc5500;
 }
 
 body {
@@ -33,63 +33,61 @@ body {
   font-family: Arial, sans-serif;
 }
 
-header{
-    background-color: rgb(25, 25, 31);
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    padding:10px;
-    border: 2px solid black;
-    width:55%;
-    text-align: center;
-    border-radius: 20px;
+header {
+  background-color: rgb(25, 25, 31);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border: 2px solid black;
+  width: 55%;
+  text-align: center;
+  border-radius: 20px;
 }
 
 header h1 {
   text-align: center;
   font-size: 50px;
 }
-
-header h3{
+header h3 {
   font-style: italic;
 }
-
-#themeTog{
-text-align:right;
-justify-content:space-around;
-margin:auto;
+#themeTog {
+  text-align: right;
+  justify-content: space-around;
+  margin: auto;
 }
 
-#modalTog{
-  margin:auto;
-  padding:15px;
-  border-radius:20px;
+#modalTog {
+  margin: auto;
+  padding: 15px;
+  border-radius: 20px;
 }
 
-#openModalBtn{
-  margin:auto;
-  padding:10px;
+#openModalBtn {
+  margin: auto;
+  padding: 10px;
   border: 2px solid grey;
-  border-radius:20px;
+  border-radius: 20px;
 }
 
-#apod-output{
+#apod-output {
   align-self: center;
-  margin:auto;
+  margin: auto;
 }
-#apodImage{
-  padding:10px;
-  border:5px;
-  border-radius:20px;
+#apodImage {
+  padding: 10px;
+  border: 5px;
+  border-radius: 20px;
 }
 
-#apod-title{
-  font-size:30px;
-  margin:auto;
-  padding:5px;
-  border:5px;
+#apod-title {
+  font-size: 30px;
+  margin: auto;
+  padding: 5px;
+  border: 5px;
   border-width: 50%;
-  border-bottom:3px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.4);
 }
 
 /* we will add more once we make the css */
@@ -155,136 +153,51 @@ img {
   justify-content: center;
 }
 
-.stylingDiv {
-  height: 1000px;
-  width: 1000px;
-  display: block;
-  text-align: center;
-  justify-content: center;
+.gameContainer {
   background-color: rgb(25, 25, 31);
   margin: 5%;
   height: 600px;
   display: flex;
   flex-direction: row;
-  border-radius:20px;
+  border-radius: 20px;
 }
 
-.mainApod {
-  top: 0px;
-  left: 0px;
-  height: 50%;
-  width: 60%;
-  margin: auto;
-  padding: 5px;
-  float: left;
-  background-color: rgb(25, 25, 31);
+.gameButton {
+  font-size: 30px;
+  margin: 30px;
 }
 
-#apod-output {
+.gameImageContainer {
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: auto;
+  border-radius: 20px;
+}
+
+.stylingDiv {
+  height: 1500px;
+  width: 1000px;
+  display: block;
   text-align: center;
   justify-content: center;
   background-color: rgb(25, 25, 31);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border-radius: 25px;
+  border: 2px solid black;
 }
 
-/* ! Game styling */
-.gameContainer {
-  position: relative;
-  border: solid 1px red;
+footer {
+  width: 1000px;
+  display: block;
+  text-align: center;
+  justify-content: center;
   background-color: rgb(25, 25, 31);
-  margin: 5% auto;
-  width: 90%;
-  max-width: 100%;
-}
-
-
-.gameButton {
-  font-size: xx-large;
-  position: absolute;
-  margin: 10px;
-  background: linear-gradient(45deg, #e0e0e0, #ffffff, #e0e0e0, #ffffff, #e0e0e0);
-}
-
-.gameButton:hover {
-    background: linear-gradient(45deg, #ffffff, #e0e0e0, #ffffff, #e0e0e0, #ffffff);
-  }
-
-.gameButton:active {
-  transform: scale(0.95);
-}
-
-.playAgain {
-  font-size: xx-large;
-  margin: 10px;
-  background: linear-gradient(45deg, #e0e0e0, #ffffff, #e0e0e0, #ffffff, #e0e0e0);
-}
-
-.playAgain:hover {
-  background: linear-gradient(45deg, #ffffff, #e0e0e0, #ffffff, #e0e0e0, #ffffff);
-}
-
-.playAgain:active {
-  transform: scale(0.95);
-}
-
-#col1 {
-  border: solid 1px yellow;
-}
-
-#col2 {
-  border: solid 1px green;
-}
-
-.gameImageContainer {
-  position: absolute;
-  border: solid 1px red;
-  max-width: 100%;
-  max-height: 590px
-}
-
-.questionContainer {
-  border: solid 1px red;
-  font-size: x-large;
-}
-
-.wordContainer {
-  border: solid 1px red;
-  font-size: xx-large;
-}
-
-.gameImageContainer {
-    height: 550px;
-    width: 550px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin:auto;
-    border-radius:20px;
-}
-
-.stylingDiv{
-height:1500px;
-width:1000px;
-display:block;
-text-align:center;
-justify-content:center;
-background-color: rgb(25, 25, 31);
-margin-left:auto;
-margin-right:auto;
-margin-top: 30px;
-border-radius:25px;
-border: 2px solid black;
-}
-
-footer{
-  width:1000px;
-display:block;
-text-align:center;
-justify-content:center;
-background-color: rgb(25, 25, 31);
-margin-left:auto;
-margin-right:auto;
-padding:20px;
-margin-top: 30px;
-border-radius:25px;
-border: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 25px;
+  border: 2px solid black;
 }
