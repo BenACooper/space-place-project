@@ -43,7 +43,7 @@ header {
   width: 55%;
   text-align: center;
   border-radius: 20px;
-}
+
 
 header h1 {
   text-align: center;
@@ -62,6 +62,7 @@ header h3 {
   margin: auto;
   padding: 15px;
   border-radius: 20px;
+
 }
 
 #openModalBtn {
@@ -176,7 +177,12 @@ img {
   justify-content: center;
 }
 
-.gameContainer {
+.stylingDiv {
+  height: 1000px;
+  width: 1000px;
+  display: block;
+  text-align: center;
+  justify-content: center;
   background-color: rgb(25, 25, 31);
   margin: 5%;
   height: 600px;
@@ -184,6 +190,17 @@ img {
   flex-direction: row;
   border-radius: 20px;
 }
+
+/* ! Game styling */
+.gameContainer {
+  position: relative;
+  border: solid 1px red;
+  background-color: rgb(25, 25, 31);
+  margin: 5% auto;
+  width: 90%;
+  max-width: 100%;
+}
+
 
 .gameButton {
   font-size: 30px;
@@ -226,3 +243,4 @@ footer {
   border-radius: 25px;
   border: 2px solid black;
 }
+  
