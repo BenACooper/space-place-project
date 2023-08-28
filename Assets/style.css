@@ -165,19 +165,21 @@ img {
   height: 600px;
   display: flex;
   flex-direction: row;
+  border-radius:20px;
 }
 
 .gameButton {
-  font-size: xx-large;
-  background: beige;
+font-size:30px;
+margin:30px;
 }
 
 .gameImageContainer {
-    border: solid 1px red;
     height: 550px;
     width: 550px;
     background-repeat: no-repeat;
     background-size: cover;
+    margin:auto;
+    border-radius:20px;
 }
 
 .stylingDiv{
@@ -194,3 +196,16 @@ border-radius:25px;
 border: 2px solid black;
 }
 
+footer{
+  width:1000px;
+display:block;
+text-align:center;
+justify-content:center;
+background-color: rgb(25, 25, 31);
+margin-left:auto;
+margin-right:auto;
+padding:20px;
+margin-top: 30px;
+border-radius:25px;
+border: 2px solid black;
+}
