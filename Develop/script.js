@@ -266,7 +266,7 @@ function selectQuestion(randomSubArray) {
 
   if (randomSubArray === celestialArr) {
     question =
-      "Many nebulae are named after an animal they resemeble. Which animal does this look like?";
+      "This nebulae is named after an animal it resembles. Which animal do you think it looks like?";
   }
 
   if (randomSubArray === galaxyArr) {
@@ -276,12 +276,12 @@ function selectQuestion(randomSubArray) {
 
   if (randomSubArray === planetMapsArr) {
     question =
-      "This is a world map of a planet in our solar system. Which planet is it?";
+      "This is a world map of another planet in our solar system. Which planet is it?";
   }
 
   if (randomSubArray === surfacePhotosArr) {
     question =
-      "This is a photo of a planet's surface. Which planet is it?";
+      "This is a 'close-up' photo of another planet's surface. Which planet is it?";
   }
 
   console.log(question);
