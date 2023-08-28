@@ -191,8 +191,6 @@ img {
 }
 
 .gameImageContainer {
-  height: 550px;
-  width: 550px;
   background-repeat: no-repeat;
   background-size: cover;
   margin: auto;
