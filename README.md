@@ -2,8 +2,9 @@
 - HTML
 - CSS
 - Tailwind CSS framework.
+- FontAwesome and GoogleFonts
 - JavaScript
-### Global
+### Global Features
 - Light/dark mode toggle.
 ### APOD (Astronomy Picture of the Day), archive search tool!
 - Quickly search for any APOD, going as far back as 1995!
