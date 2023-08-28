@@ -1,7 +1,7 @@
 ## Technologies used.
 - HTML
 - CSS
-- Tailwind CSS framework.
+- Tailwind CSS framework, GoogleFonts, FontAwesome.
 - JavaScript
 ### Global
 - Light/dark mode toggle.
@@ -22,3 +22,7 @@
 ### Links
 - Repo: https://github.com/BenACooper/space-place-project
 - Deployed: https://benacooper.github.io/space-place-project/
+
+- ![image](https://github.com/BenACooper/space-place-project/assets/39800139/c9bc71c9-998f-433d-8315-e3e9ea6e3eab)
+![image](https://github.com/BenACooper/space-place-project/assets/39800139/9a0bb078-b303-49bf-89df-b4cf3b2984f7)
+![image](https://github.com/BenACooper/space-place-project/assets/39800139/e86b10ee-6397-4a3a-95f6-e1bf59b2e665)
