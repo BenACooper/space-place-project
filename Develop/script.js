@@ -84,6 +84,11 @@ function displayHistory() {
   const historyContainer = document.getElementById("history-container");
   historyContainer.innerHTML = "";
 
+  const titleEl = document.createElement("h2");
+  titleEl.textContent = "APOD Search History";
+  titleEl.classList.add("history-title");
+  historyContainer.appendChild(titleEl);
+
   const startIdx = Math.max(0, history.length - 5);
   const recentHistory = history.slice(startIdx);
 
