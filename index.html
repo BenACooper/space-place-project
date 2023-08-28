@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="Assets/style.css" />
-    <script rel="tailwind" src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <title>Space Place</title>
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="Assets/style.css" />
+  <script rel="tailwind" src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <title>Space Place</title>
+</head>
 
   <body>
     <header>
@@ -22,47 +20,54 @@
       </div>
     </header>
 
-    <div class="stylingDiv">
-      <div class="mainApod">
-        <div id="modalTog">
-          <button id="openModalBtn">APOD Historical Search! Click me!</button>
-        </div>
+  <div class="stylingDiv">
+    <div class="mainApod">
+      <div id="modalTog">
+        <button id="openModalBtn">APOD Historical Search! Click me!</button>
+      </div>
 
-        <div id="apod-output">
-          <h3 id="apod-title"></h3>
-          <div id="imageoutput"></div>
+      <div id="apod-output">
+        <h3 id="apod-title"></h3>
+        <div id="imageoutput"></div>
 
-          <img id="apodImage" />
-          <p id="description"></p>
-        </div>
+        <img id="apodImage" />
+        <p id="description"></p>
       </div>
     </div>
+  </div>
 
-    <div id="modal">
-      <div class="apod-input">
-        <span class="close">&times;</span>
-        <h2>Select a date to view APOD</h2>
-        <form id="calendar">
-          <input type="date" id="date" />
-          <button type="button" id="submit-button">Submit</button>
-        </form>
-      </div>
+  <div id="modal">
+    <div class="apod-input">
+      <span class="close">&times;</span>
+      <h2>Select a date to view APOD</h2>
+      <form id="calendar">
+        <input type="date" id="date" />
+        <button type="button" id="submit-button">Submit</button>
+      </form>
     </div>
+  </div>
 
-    <div id="history-container"></div>
+  <div id="history-container"></div>
 
-    <section class="gameContainer">
-      <button class="gameButton">Click Me!</button>
-      <div class="gameImageContainer"></div>
-      <div class="wordContainer"></div>
-    </section>
+  <section class="gameContainer md:h-[600px] h-auto md:flex md:flex-wrap">
+    <div id="col1" class="md:h-[600px] h-auto md:w-1/2 grid grid-rows-5 flex justify-center items-center">
+      <button class="gameButton rounded place-self-center p-2">Start Game</button>
+      <button class="playAgain hidden rounded row-start-2 p-2">Play Again!</button>
+      <div class="gameImageContainer hidden row-span-4 place-self-center"></div>
+    </div>
+    <div id="col2" class="md:h-[600px] h-auto md:w-1/2 grid grid-rows-4 flex justify-items-center">
+      <p class="questionContainer row-start-1 row-span-1 border border-gray-400 rounded-md p-4 bg-white text-gray-800 m-4 w-10/12">Do you like space?</p>
+      <p class="wordContainer row-start-3 row-span-1"></p>
+    </div>
+  </section>
 
-    <footer>
-      <ul>
-        <li>Developed by Ben, Jatan, & Matt</li>
-        <li>Nasa APOD Api, and Nasa Images API</li>
-      </ul>
-    </footer>
-    <script src="Develop/script.js"></script>
-  </body>
+  <footer>
+    <ul>
+      <li>Developed by Ben, Jatan, & Matt</li>
+      <li>Nasa APOD Api, and Nasa Images API</li>
+    </ul>
+  </footer>
+  <script src="Develop/script.js"></script>
+</body>
+
 </html>
