@@ -24,54 +24,48 @@
 }
 
 body {
-
-    margin: 0;
-    padding: 0;
-    background-image: url('https://wallpapercave.com/wp/PyO6z3T.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: Arial, sans-serif;
-    
+  margin: 0;
+  padding: 0;
+  background-image: url("https://wallpapercave.com/wp/PyO6z3T.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
 }
 
-header{
-    background-color: rgb(25, 25, 31);
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    padding:10px;
-    border: 2px solid black;
-    width:50%;
-    text-align: center;
-    
+header {
+  background-color: rgb(25, 25, 31);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border: 2px solid black;
+  width: 50%;
+  text-align: center;
 }
 
-header h1{
-    text-align: center;
-    font-size:50px;
+header h1 {
+  text-align: center;
+  font-size: 50px;
 }
 
-#themeTog{
-    background-color:rgb(25, 25, 31);
-    display:inline-block;
-    margin:10px;
-    padding:20px;
-    border: 2px solid black;
-    float: right;
-
-
+#themeTog {
+  background-color: rgb(25, 25, 31);
+  display: inline-block;
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid black;
+  float: right;
 }
 
-#modalTog{
-    background-color:rgb(25, 25, 31);
-    display:inline-block;
-    margin:auto;
-    margin-left:18px;
-    padding:15px;
-    border: 2px solid black;
-    float: left;
-
+#modalTog {
+  background-color: rgb(25, 25, 31);
+  display: inline-block;
+  margin: auto;
+  margin-left: 18px;
+  padding: 15px;
+  border: 2px solid black;
+  float: left;
 }
 /* we will add more once we make the css */
 /* ! Modal styling */
@@ -136,53 +130,97 @@ img {
   justify-content: center;
 }
 
-.gameContainer {
+.stylingDiv {
+  height: 1000px;
+  width: 1000px;
+  display: block;
+  text-align: center;
+  justify-content: center;
   background-color: rgb(25, 25, 31);
-  margin: 5%;
-  height: 600px;
-  display: flex;
-  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.mainApod {
+  top: 0px;
+  left: 0px;
+  height: 50%;
+  width: 60%;
+  margin: auto;
+  padding: 5px;
+  float: left;
+  background-color: rgb(25, 25, 31);
+}
+
+#apod-output {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(25, 25, 31);
+}
+
+/* ! Game styling */
+
+.gameContainer {
+  position: relative;
+  border: solid 1px red;
+  background-color: rgb(25, 25, 31);
+  margin: 5% auto;
+  width: 90%;
+  max-width: 100%;
+}
+
 
 .gameButton {
   font-size: xx-large;
-  background: beige;
+  position: absolute;
+  margin: 10px;
+  background: linear-gradient(45deg, #e0e0e0, #ffffff, #e0e0e0, #ffffff, #e0e0e0);
+}
+
+.gameButton:hover {
+    background: linear-gradient(45deg, #ffffff, #e0e0e0, #ffffff, #e0e0e0, #ffffff);
+  }
+
+.gameButton:active {
+  transform: scale(0.95);
+}
+
+.playAgain {
+  font-size: xx-large;
+  margin: 10px;
+  background: linear-gradient(45deg, #e0e0e0, #ffffff, #e0e0e0, #ffffff, #e0e0e0);
+}
+
+.playAgain:hover {
+  background: linear-gradient(45deg, #ffffff, #e0e0e0, #ffffff, #e0e0e0, #ffffff);
+}
+
+.playAgain:active {
+  transform: scale(0.95);
+}
+
+#col1 {
+  border: solid 1px yellow;
+}
+
+#col2 {
+  border: solid 1px green;
 }
 
 .gameImageContainer {
-    border: solid 1px red;
-    height: 550px;
-    width: 550px;
-    background-repeat: no-repeat;
-    background-size: cover;
+  position: absolute;
+  border: solid 1px red;
+  max-width: 100%;
+  max-height: 590px
 }
 
-.stylingDiv{
-height:1000px;
-width:1000px;
-display:block;
-text-align:center;
-justify-content:center;
-background-color: rgb(25, 25, 31);
-margin-left:auto;
-margin-right:auto;
+.questionContainer {
+  border: solid 1px red;
+  font-size: x-large;
 }
 
-.mainApod{
-    top:0px;
-    left:0px;
-    height:50%;
-    width:60%;
-    margin:auto;
-    padding:5px;
-    float:left;
-    background-color: rgb(25, 25, 31);
-
-}
-
-#apod-output{
-    margin:auto;
-    text-align:center;
-    justify-content:center;
-    background-color: rgb(25, 25, 31);
+.wordContainer {
+  border: solid 1px red;
+  font-size: xx-large;
 }
